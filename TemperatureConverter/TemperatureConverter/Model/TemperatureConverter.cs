@@ -7,5 +7,13 @@ namespace TemperatureConverter.Model
 {
     public class TemperatureConverter
     {
+        public static int CelsiusToFarenheit(int degreesC)
+        {
+            return Convert.ToInt32(degreesC * 1.8 + 32);
+        }
+        public static int FahrenheitToCelsius(int degreesF)
+        {
+            return Convert.ToInt32((degreesF - 32) * 5 / 9);
+        }
     }
 }
