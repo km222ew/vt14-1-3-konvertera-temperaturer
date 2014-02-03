@@ -18,7 +18,36 @@ namespace TemperatureConverter
         {
             if (IsValid)
             {
-                
+                //Om celsius till fahrenheit inte är checka byts header-namnen ut
+                if (!CelsToFahr.Checked)
+                {
+                    FirstTempHeader.Text = "&degF";
+                    SecondTempHeader.Text = "&degC";
+                }
+
+                for (int i = int.Parse(StartTempInput.Text); i <= int.Parse(EndTempInput.Text); i += int.Parse(TempStepInput.Text))
+                {
+                    //En ny tabell-rad skapas
+                    TableRow tempRow = new TableRow();
+
+                    //Den första tabell-cellen skapas, får en text och läggs till i raden
+                    TableCell firstTempCell = new TableCell();
+                    firstTempCell.Text = i.ToString();
+                    tempRow.Cells.Add(firstTempCell);
+
+                    //Den andra tabell-cellen skapas
+                    TableCell secondTempCell = new TableCell();
+                    //Om Celsius till Fahrenheit är checkad körs den, annars körs Fahrenheit till Celsius
+                    secondTempCell.Text = CelsToFahr.Checked ?
+                        secondTempCell.Text = Model.TemperatureConverter.CelsiusToFahrenheit(i).ToString() :
+                        secondTempCell.Text = Model.TemperatureConverter.FahrenheitToCelsius(i).ToString();
+                    tempRow.Cells.Add(secondTempCell);
+
+                    //Lägger till raden i tabellen
+                    Table.Rows.Add(tempRow);
+                }
+
+                Table.Visible = true;
             }
         }
     }

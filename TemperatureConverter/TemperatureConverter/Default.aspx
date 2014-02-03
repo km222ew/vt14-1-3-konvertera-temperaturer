@@ -21,6 +21,7 @@
             </div>
 
             <div>
+
                 <%-- Starttemperatur --%>
                 <asp:Label ID="StartTempLabel" runat="server" Text="Starttemperatur" CssClass="info"></asp:Label>
                 <asp:TextBox ID="StartTempInput" runat="server" CssClass="input"></asp:TextBox>
@@ -54,10 +55,16 @@
             </div>
         </form>
 
-        <div>
-            <%-- Tabell --%>
-            <asp:Table ID="Table" runat="server" Visible="True"></asp:Table>
-        </div>
+        <%-- Tabell --%>
+        
+            <asp:Table ID="Table" runat="server" Visible="False">
+                <asp:TableHeaderRow>
+                    <asp:TableHeaderCell ID="FirstTempHeader">&degC</asp:TableHeaderCell>
+                    <asp:TableHeaderCell ID="SecondTempHeader">&degF</asp:TableHeaderCell>
+                </asp:TableHeaderRow>
+            </asp:Table>
+        
+
     </div>
 </body>
 </html>
