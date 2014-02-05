@@ -55,7 +55,7 @@
             </div>
         </form>
 
-        <%-- Tabell --%>
+        <%-- Tabell med temperatur-datan --%>
         
             <asp:Table ID="Table" runat="server" Visible="False">
                 <asp:TableHeaderRow>

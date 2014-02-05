@@ -18,7 +18,7 @@ namespace TemperatureConverter
         {
             if (IsValid)
             {
-                //Om celsius till fahrenheit inte är checka byts header-namnen ut
+                //Om celsius till fahrenheit inte är checkad, byt ut header-namnen i tabellen
                 if (!CelsToFahr.Checked)
                 {
                     FirstTempHeader.Text = "&degF";
@@ -47,6 +47,7 @@ namespace TemperatureConverter
                     Table.Rows.Add(tempRow);
                 }
 
+                //Visar tabellen
                 Table.Visible = true;
             }
         }
